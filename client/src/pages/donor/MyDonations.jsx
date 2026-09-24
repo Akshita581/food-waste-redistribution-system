@@ -135,6 +135,7 @@ function MyDonations() {
                                         <th>Quantity</th>
                                         <th>Status</th>
                                         <th>Date</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -152,6 +153,14 @@ function MyDonations() {
                                                 </span>
                                             </td>
                                             <td className="date-cell">{donation.date}</td>
+                                            <td>
+                                                <Link
+                                                    to={`/donation-details/${donation.id}`}
+                                                    className="donor-link-action"
+                                                >
+                                                    View Details →
+                                                </Link>
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
