@@ -11,6 +11,9 @@ import AvailableFood from './pages/ngo/AvailableFood'
 import FoodDetails from './pages/ngo/FoodDetails'
 import MyRequests from './pages/ngo/MyRequests'
 import RequestDetails from './pages/ngo/RequestDetails'
+import VolunteerDashboard from './pages/volunteer/VolunteerDashboard'
+import Assignments from './pages/volunteer/Assignments'
+import AssignmentDetails from './pages/volunteer/AssignmentDetails'
 import './App.css'
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
         <Route path="/food-details/:id" element={<FoodDetails />} />
         <Route path="/my-requests" element={<MyRequests />} />
         <Route path="/request-details/:id" element={<RequestDetails />} />
+        <Route path="/volunteer-dashboard" element={<VolunteerDashboard />} />
+        <Route path="/assignments" element={<Assignments />} />
+        <Route path="/assignment-details/:id" element={<AssignmentDetails />} />
       </Routes>
     </BrowserRouter>
   )
