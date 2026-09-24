@@ -2748,3 +2748,781 @@ body {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   NGO DASHBOARD
+========================================================= */
+
+.ngo-dashboard {
+  min-height: 100vh;
+  background: #f8faf8;
+  color: #153e28;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. NGO Top Navbar */
+.ngo-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5eee6;
+  display: flex;
+  align-items: center;
+}
+
+.ngo-nav-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ngo-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.ngo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #153e28;
+}
+
+.ngo-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ngo-nav-link {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #556c5e;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ngo-nav-link.active {
+  background: #eaf6ed;
+  color: #207541;
+}
+
+.ngo-nav-link:hover:not(.active) {
+  background: #f0f7f1;
+  color: #207541;
+}
+
+.ngo-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ngo-user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f7f1;
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid #d4ebd9;
+  font-size: 13px;
+  font-weight: 650;
+  color: #1a4d2f;
+}
+
+.ngo-avatar-icon {
+  font-size: 14px;
+}
+
+.ngo-logout-btn {
+  background: transparent;
+  border: 1.5px solid #d5e5d8;
+  color: #556c5e;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ngo-logout-btn:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* 2. NGO Main Content */
+.ngo-main-content {
+  flex: 1;
+  padding: 34px 0 60px;
+}
+
+.ngo-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 3. Welcome Section */
+.ngo-welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #185a33 0%, #114223 100%);
+  border-radius: 18px;
+  padding: 32px 36px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(22, 60, 36, 0.12);
+  margin-bottom: 32px;
+}
+
+.ngo-role-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  color: #c0f4ce;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.ngo-welcome-title {
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+
+.ngo-welcome-subtitle {
+  font-size: 14.5px;
+  color: #d4eedb;
+  margin: 0;
+  max-width: 540px;
+  line-height: 1.5;
+}
+
+.ngo-welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ngo-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #17582f;
+  font-size: 14.5px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.ngo-btn-primary:hover {
+  background: #f0faf2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.ngo-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 650;
+  font-family: inherit;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.ngo-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
+}
+
+/* 4. Statistics / Summary Section */
+.ngo-summary-section {
+  margin-bottom: 32px;
+}
+
+.ngo-section-header {
+  margin-bottom: 16px;
+}
+
+.ngo-section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.ngo-section-title {
+  font-size: 19px;
+  font-weight: 750;
+  color: #153e28;
+  margin: 0 0 4px;
+  letter-spacing: -0.3px;
+}
+
+.ngo-section-subtitle {
+  font-size: 13px;
+  color: #63786c;
+}
+
+.ngo-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.ngo-stat-card {
+  background: #ffffff;
+  border: 1px solid #e3ede4;
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 14px rgba(22, 60, 36, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ngo-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(22, 60, 36, 0.08);
+  border-color: #cbe4d0;
+}
+
+.ngo-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ngo-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5d7266;
+}
+
+.ngo-stat-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.ngo-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #153e28;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.ngo-stat-subtext {
+  font-size: 12px;
+  color: #7c9184;
+}
+
+/* 5. Recently Available Food Section */
+.ngo-available-food-section {
+  margin-bottom: 32px;
+}
+
+.ngo-food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ngo-food-card {
+  background: #ffffff;
+  border: 1px solid #e3ede4;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(22, 60, 36, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ngo-food-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbe4d0;
+  box-shadow: 0 10px 24px rgba(22, 60, 36, 0.08);
+}
+
+.ngo-food-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ngo-food-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ngo-food-icon {
+  width: 42px;
+  height: 42px;
+  background: #f0f7f1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid #d7ebd9;
+  flex-shrink: 0;
+}
+
+.ngo-food-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #153e28;
+  margin: 0 0 2px;
+}
+
+.ngo-food-category {
+  font-size: 12px;
+  color: #6d8475;
+}
+
+.ngo-food-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #fbfdfa;
+  border-radius: 10px;
+  border: 1px solid #edf4ee;
+  margin-bottom: 18px;
+}
+
+.ngo-food-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ngo-meta-label {
+  font-size: 12.5px;
+  color: #63786c;
+}
+
+.ngo-meta-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #153e28;
+}
+
+.ngo-meta-value.highlight {
+  color: #25854b;
+  font-weight: 700;
+}
+
+.ngo-food-card-footer {
+  margin-top: auto;
+}
+
+.ngo-btn-card-action {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background: #eaf6ed;
+  color: #1e703c;
+  font-size: 13.5px;
+  font-weight: 650;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid #c9ebd2;
+  transition: all 0.2s ease;
+}
+
+.ngo-btn-card-action:hover {
+  background: #25854b;
+  color: #ffffff;
+  border-color: #25854b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 133, 75, 0.2);
+}
+
+/* 6. Two-Column NGO Layout */
+.ngo-layout-grid {
+  display: grid;
+  grid-template-columns: 1.85fr 1.15fr;
+  gap: 24px;
+}
+
+/* 7. Recent Requests Table */
+.ngo-table-card {
+  background: #ffffff;
+  border: 1px solid #e3ede4;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(22, 60, 36, 0.04);
+  overflow: hidden;
+}
+
+.ngo-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ngo-requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ngo-requests-table th {
+  background: #f7faf7;
+  padding: 13px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #445d4f;
+  border-bottom: 1px solid #e5eee6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ngo-requests-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf4ee;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.ngo-requests-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ngo-requests-table tr:hover td {
+  background: #fbfdfb;
+}
+
+.ngo-req-food-name {
+  color: #153e28;
+  font-size: 14.5px;
+  font-weight: 650;
+}
+
+.ngo-req-quantity {
+  font-weight: 600;
+  color: #274836;
+}
+
+.ngo-req-date {
+  font-size: 13px;
+  color: #63786c;
+}
+
+/* Status Badges for NGO */
+.ngo-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.ngo-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.ngo-status-pending {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.ngo-status-pending .ngo-status-dot {
+  background: #d97706;
+}
+
+.ngo-status-approved {
+  background: #eff6ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.ngo-status-approved .ngo-status-dot {
+  background: #0284c7;
+}
+
+.ngo-status-completed {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.ngo-status-completed .ngo-status-dot {
+  background: #16a34a;
+}
+
+.ngo-status-available {
+  background: #eaf6ed;
+  color: #1a793f;
+  border: 1px solid #c9ebd2;
+}
+
+.ngo-status-available .ngo-status-dot {
+  background: #25854b;
+}
+
+.ngo-status-default {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.ngo-status-default .ngo-status-dot {
+  background: #6b7280;
+}
+
+.ngo-link-action {
+  background: transparent;
+  border: none;
+  color: #25854b;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.ngo-link-action:hover {
+  background: #eaf6ed;
+  color: #17582f;
+}
+
+/* 8. Quick Actions Section */
+.ngo-quick-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ngo-action-card {
+  background: #ffffff;
+  border: 1px solid #e3ede4;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 4px 14px rgba(22, 60, 36, 0.04);
+  transition: all 0.25s ease;
+}
+
+.ngo-action-card:hover {
+  transform: translateY(-2px);
+  border-color: #cce4d1;
+  box-shadow: 0 8px 20px rgba(22, 60, 36, 0.08);
+}
+
+.ngo-action-icon-box {
+  width: 44px;
+  height: 44px;
+  background: #eaf6ed;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  border: 1px solid #d5ecd9;
+}
+
+.ngo-action-details {
+  flex: 1;
+}
+
+.ngo-action-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #153e28;
+  margin: 0 0 4px;
+}
+
+.ngo-action-desc {
+  font-size: 12.5px;
+  color: #63786c;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.ngo-btn-action-primary {
+  display: inline-block;
+  background: #25854b;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 650;
+  font-family: inherit;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(37, 133, 75, 0.2);
+}
+
+.ngo-btn-action-primary:hover {
+  background: #1c6b3b;
+  transform: translateY(-1px);
+}
+
+.ngo-btn-action-secondary {
+  display: inline-block;
+  background: #f0f7f1;
+  color: #207541;
+  font-size: 13px;
+  font-weight: 650;
+  font-family: inherit;
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: 1px solid #cce4d1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ngo-btn-action-secondary:hover {
+  background: #e4f3e6;
+  border-color: #25854b;
+}
+
+/* 9. Responsive Styling for NGO Dashboard */
+@media (max-width: 1024px) {
+  .ngo-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ngo-food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ngo-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ngo-navbar {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .ngo-nav-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .ngo-nav-left {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .ngo-nav-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ngo-welcome-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 26px 22px;
+  }
+
+  .ngo-welcome-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .ngo-btn-primary,
+  .ngo-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ngo-food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ngo-container {
+    padding: 0 16px;
+  }
+
+  .ngo-welcome-title {
+    font-size: 23px;
+  }
+
+  .ngo-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ngo-action-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

@@ -6,6 +6,7 @@ import DonorDashboard from './pages/donor/DonorDashboard'
 import CreateDonation from './pages/donor/CreateDonation'
 import MyDonations from './pages/donor/MyDonations'
 import DonationDetails from './pages/donor/DonationDetails'
+import NGODashboard from './pages/ngo/NGODashboard'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/create-donation" element={<CreateDonation />} />
         <Route path="/my-donations" element={<MyDonations />} />
         <Route path="/donation-details/:id" element={<DonationDetails />} />
+        <Route path="/ngo-dashboard" element={<NGODashboard />} />
       </Routes>
     </BrowserRouter>
   )
