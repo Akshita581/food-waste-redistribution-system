@@ -268,7 +268,7 @@ function NGODashboard() {
                                     </div>
 
                                     <div className="ngo-food-card-footer">
-                                        <Link to="/available-food" className="ngo-btn-card-action">
+                                        <Link to={`/food-details/${item.id}`} className="ngo-btn-card-action">
                                             View Details
                                         </Link>
                                     </div>
