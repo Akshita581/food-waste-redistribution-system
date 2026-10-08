@@ -14,6 +14,11 @@ import RequestDetails from './pages/ngo/RequestDetails'
 import VolunteerDashboard from './pages/volunteer/VolunteerDashboard'
 import Assignments from './pages/volunteer/Assignments'
 import AssignmentDetails from './pages/volunteer/AssignmentDetails'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminUsers from './pages/admin/AdminUsers'
+import AdminDonations from './pages/admin/AdminDonations'
+import AdminRequests from './pages/admin/AdminRequests'
+import AdminAssignments from './pages/admin/AdminAssignments'
 import './App.css'
 
 function App() {
@@ -35,6 +40,11 @@ function App() {
         <Route path="/volunteer-dashboard" element={<VolunteerDashboard />} />
         <Route path="/assignments" element={<Assignments />} />
         <Route path="/assignment-details/:id" element={<AssignmentDetails />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-users" element={<AdminUsers />} />
+        <Route path="/admin-donations" element={<AdminDonations />} />
+        <Route path="/admin-requests" element={<AdminRequests />} />
+        <Route path="/admin-assignments" element={<AdminAssignments />} />
       </Routes>
     </BrowserRouter>
   )
