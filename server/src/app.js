@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 // Import our system route components
 import authRoutes from './routes/authRoutes.js';
 import donorRoutes from './routes/donorRoutes.js';
+import ngoRoutes from './routes/ngoRoutes.js';
+import volunteerRoutes from './routes/volunteerRoutes.js';
 
 dotenv.config();
 
@@ -24,6 +26,8 @@ app.get('/api/health', (req, res) => {
 // Mount our sub-routes to specific endpoint stems
 app.use('/api/auth', authRoutes);
 app.use('/api/donor', donorRoutes);
+app.use('/api/ngo', ngoRoutes);
+app.use('/api/volunteer', volunteerRoutes);
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
